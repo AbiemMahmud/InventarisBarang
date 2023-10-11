@@ -18,9 +18,15 @@ import java.util.logging.Logger;
 public class Koneksi {
     public static Connection buatKoneksi() {
         Connection con = null;
+//        Template untuk tabel dan skema database berada di file TabelDatabase.sql
         try {
-            String url = "jdbc:mysql://localhost:3306/java?user=root&password=root";
-            con = DriverManager.getConnection(url);
+//            Buat tabel dengan nama java terlebih dahulu
+            String url = "jdbc:mysql://localhost:3306/java";
+            
+//            Masukkan informasi sesuai username dan password database
+            String user = "root";
+            String pass = "root";
+            con = DriverManager.getConnection(url, user, pass);
         } catch (SQLException ex) {
             Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -28,6 +34,7 @@ public class Koneksi {
         return con;
     }
     
+//    Fungsi main hanya untuk cek.
     public static void main(String[] args) {
         Connection cn = buatKoneksi();
     }
