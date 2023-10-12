@@ -47,8 +47,11 @@ public class MainFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        mnInv = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desk.setBackground(new java.awt.Color(204, 255, 255));
 
         javax.swing.GroupLayout deskLayout = new javax.swing.GroupLayout(desk);
         desk.setLayout(deskLayout);
@@ -87,6 +90,15 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Menu");
+
+        mnInv.setText("Tabel Inventaris");
+        mnInv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnInvActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mnInv);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -114,6 +126,11 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         km.tampilLogin();
     }//GEN-LAST:event_mnLoginActionPerformed
+
+    private void mnInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnInvActionPerformed
+        // Menampilkan frame inventaris
+        km.tampilInv();
+    }//GEN-LAST:event_mnInvActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +206,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem mnInv;
     private javax.swing.JMenuItem mnLogin;
     private javax.swing.JMenuItem mnLogout;
     // End of variables declaration//GEN-END:variables

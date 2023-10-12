@@ -16,6 +16,9 @@ import javax.swing.table.AbstractTableModel;
 public class TabelBarang extends AbstractTableModel{
     List<Barang> lb;
 
+    public TabelBarang (List lb) {
+        this.lb = lb;
+    }
     @Override
     public int getRowCount() {
         return lb.size();

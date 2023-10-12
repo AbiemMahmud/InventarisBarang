@@ -39,6 +39,7 @@ public class KontrolLogin {
             if (username.equals(c_username)) {
                 if (Arrays.equals(pass, c_pass)){
                     JOptionPane.showMessageDialog(null, "Login Sukses!");
+                    lf.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Password Salah!!");
                 }
