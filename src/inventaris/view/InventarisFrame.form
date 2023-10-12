@@ -42,8 +42,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cariTF" pref="132" max="32767" attributes="0"/>
-                                  <Component id="kategoriCB" max="32767" attributes="0"/>
+                                  <Component id="cariTF" max="32767" attributes="0"/>
+                                  <Component id="kategoriCB" pref="132" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -161,9 +161,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="cariTF">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

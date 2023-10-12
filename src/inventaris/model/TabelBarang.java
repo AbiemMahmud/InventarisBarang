@@ -46,4 +46,22 @@ public class TabelBarang extends AbstractTableModel{
                 return null;
         }
     }
+    
+    @Override
+    public String getColumnName(int column) {
+        switch (column) {
+            case 0:
+                return "ID";
+            case 1:
+                return "Nama";
+            case 2:
+                return "Jumlah";
+            case 3:
+                return "Harga";
+            case 4:
+                return "Kategori";
+            default:
+                return null;
+        }
+    }
 }

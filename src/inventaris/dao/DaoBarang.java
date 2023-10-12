@@ -30,14 +30,15 @@ public class DaoBarang {
             + "harga_barang, id_kategori) VALUES (?,?,?,?,?)";
     final String UPDATE = "UPDATE barang set nama_barang=?, jumlah_barang=? WHERE id_barang=?";
     final String DELETE = "DELETE FROM barang WHERE id_barang=?";
-    final String SELECT = "SELECT * FROM barang";
+    final String SELECT = "SELECT b.id_barang,b.nama_barang,b.jumlah_barang,b.harga_barang,k.nama_kategori"
+            + " FROM barang AS b LEFT JOIN kategori AS k ON b.id_kategori=k.id_kategori";
     
     public DaoBarang () {
         con = Koneksi.buatKoneksi();
     }
     
     public List<Barang> getAll() {
-        List<Barang> lb = new ArrayList<Barang>();
+        List<Barang> lb = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(SELECT);
             
@@ -48,7 +49,7 @@ public class DaoBarang {
                 b.setNama_barang(rs.getString("nama_barang"));
                 b.setJumlah_barang(rs.getInt("jumlah_barang"));
                 b.setHarga_barang(rs.getInt("harga_barang"));
-                b.setId_kategori(rs.getString("id_kategori"));
+                b.setId_kategori(rs.getString("nama_kategori"));
                 lb.add(b);
             }
         } catch (SQLException ex) {

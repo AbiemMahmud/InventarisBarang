@@ -6,6 +6,7 @@
 package inventaris.view;
 
 import inventaris.kontrol.KontrolInventaris;
+import inventaris.model.ModelCombo;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -22,9 +23,11 @@ public class InventarisFrame extends javax.swing.JInternalFrame {
     KontrolInventaris ki;
     
     public InventarisFrame() {
+        ModelCombo mk = new ModelCombo();
         initComponents();
         ki = new KontrolInventaris(this);
         ki.isiTabel();
+        kategoriCB.setModel(mk);
     }
 
     /**
@@ -79,8 +82,6 @@ public class InventarisFrame extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Cari");
 
-        cariTF.setText("jTextField1");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,8 +101,8 @@ public class InventarisFrame extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel3))
                                 .addGap(35, 35, 35)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cariTF, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                    .addComponent(kategoriCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                    .addComponent(cariTF)
+                                    .addComponent(kategoriCB, 0, 132, Short.MAX_VALUE))))))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
