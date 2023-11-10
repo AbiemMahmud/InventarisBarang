@@ -36,6 +36,6 @@ public class Koneksi {
     
 //    Fungsi main hanya untuk cek.
     public static void main(String[] args) {
-        Connection cn = buatKoneksi();
+        buatKoneksi();
     }
 }

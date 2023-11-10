@@ -48,6 +48,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnInv = new javax.swing.JMenuItem();
+        masukInv = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,7 +79,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu1.add(mnLogout);
         jMenu1.add(jSeparator1);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem1.setText("Keluar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +99,14 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         jMenu2.add(mnInv);
+
+        masukInv.setText("Masukan Barang");
+        masukInv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masukInvActionPerformed(evt);
+            }
+        });
+        jMenu2.add(masukInv);
 
         jMenuBar1.add(jMenu2);
 
@@ -131,6 +140,11 @@ public class MainFrame extends javax.swing.JFrame {
         // Menampilkan frame inventaris
         km.tampilInv();
     }//GEN-LAST:event_mnInvActionPerformed
+
+    private void masukInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukInvActionPerformed
+        // TODO add your handling code here:
+        km.tampilMasukInv();
+    }//GEN-LAST:event_masukInvActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +220,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem masukInv;
     private javax.swing.JMenuItem mnInv;
     private javax.swing.JMenuItem mnLogin;
     private javax.swing.JMenuItem mnLogout;

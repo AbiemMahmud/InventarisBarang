@@ -5,8 +5,6 @@
  */
 package inventaris.dao;
 
-import inventaris.model.User;
-import java.util.List;
 
 /**
  *

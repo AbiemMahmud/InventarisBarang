@@ -6,7 +6,6 @@
 package inventaris.main;
 
 import inventaris.view.MainFrame;
-import javax.swing.JFrame;
 
 /**
  *

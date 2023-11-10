@@ -32,6 +32,7 @@ public class DaoBarang {
     final String DELETE = "DELETE FROM barang WHERE id_barang=?";
     final String SELECT = "SELECT b.id_barang,b.nama_barang,b.jumlah_barang,b.harga_barang,k.nama_kategori"
             + " FROM barang AS b LEFT JOIN kategori AS k ON b.id_kategori=k.id_kategori";
+    final String GETKATEID = "SELECT id_kategori FROM kategori WHERE nama_kategori=?";
     
     public DaoBarang () {
         con = Koneksi.buatKoneksi();
@@ -57,5 +58,30 @@ public class DaoBarang {
         }
         
         return lb;
+    }
+    
+    public void insertBarang (String id, String nama, int jumlah, int harga, String kate) throws SQLException {
+        PreparedStatement ps = con.prepareStatement(INSERT);
+        ps.setString(1, id);
+        ps.setString(2, nama);
+        ps.setInt(3, jumlah);
+        ps.setInt(4, harga);
+        ps.setString(5, kate);
+        
+        ps.execute();
+    }
+    
+    public String getKate(String nama) throws SQLException {
+        String id = "0";
+    
+        PreparedStatement ps = con.prepareStatement(GETKATEID);
+        ps.setString(1, nama);
+        ResultSet rs = ps.executeQuery();
+        
+        while (rs.next()) {
+            id = rs.getString(1);
+        }
+        
+        return id;
     }
 }

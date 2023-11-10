@@ -6,7 +6,6 @@
 package inventaris.model;
 
 import java.util.List;
-import javafx.beans.binding.Bindings;
 import javax.swing.table.AbstractTableModel;
 
 /**
