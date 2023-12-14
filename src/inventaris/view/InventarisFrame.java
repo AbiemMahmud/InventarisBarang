@@ -8,6 +8,7 @@ package inventaris.view;
 import inventaris.kontrol.KontrolInventaris;
 import inventaris.model.ModelCombo;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -79,6 +80,11 @@ public class InventarisFrame extends javax.swing.JInternalFrame {
         jLabel2.setText("Kategori");
 
         kategoriCB.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        kategoriCB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                kategoriCBItemStateChanged(evt);
+            }
+        });
 
         jLabel3.setText("Cari");
 
@@ -125,6 +131,15 @@ public class InventarisFrame extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void kategoriCBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kategoriCBItemStateChanged
+        // TODO add your handling code here:
+        if (kategoriCB.getSelectedItem().equals("Belum Ditentukan")) {
+            ki.isiTabel();
+        } else {
+            ki.isiTabelFilter();
+        }
+    }//GEN-LAST:event_kategoriCBItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

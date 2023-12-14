@@ -6,7 +6,6 @@
 package inventaris.kontrol;
 
 import inventaris.view.InventarisFrame;
-import inventaris.view.LoginFrame;
 import inventaris.view.MainFrame;
 import inventaris.view.MasukanInv;
 
@@ -19,11 +18,6 @@ public class KontrolMain {
     
     public KontrolMain (MainFrame fr) {
         this.mf = fr;
-    }
-    
-    public void tampilLogin () {
-        LoginFrame lf = new LoginFrame();
-        mf.getDesk().add(lf);
     }
     
     public void tampilInv () {

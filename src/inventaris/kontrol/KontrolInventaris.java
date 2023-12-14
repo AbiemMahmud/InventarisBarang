@@ -30,4 +30,11 @@ public class KontrolInventaris {
         TabelBarang tb = new TabelBarang(lb);
         f.getTabelInv().setModel(tb);
     }
+    
+    public void isiTabelFilter() {
+        String sel = f.getKategoriCB().getSelectedItem().toString();
+        lb = db.getBarangKate(sel);
+        TabelBarang tb = new TabelBarang(lb);
+        f.getTabelInv().setModel(tb);
+    }
 }

@@ -7,12 +7,9 @@ package inventaris.view;
 
 import inventaris.kontrol.KontrolMain;
 import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
 /**
@@ -27,7 +24,6 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         this.km = new KontrolMain(this);
         initComponents();
-        km.tampilLogin();
     }
 
     /**
@@ -68,6 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         mnLogin.setText("Login");
+        mnLogin.setEnabled(false);
         mnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnLoginActionPerformed(evt);
@@ -76,10 +73,15 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu1.add(mnLogin);
 
         mnLogout.setText("Logout");
+        mnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnLogoutActionPerformed(evt);
+            }
+        });
         jMenu1.add(mnLogout);
         jMenu1.add(jSeparator1);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setText("Keluar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +135,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void mnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnLoginActionPerformed
         // TODO add your handling code here:
-        km.tampilLogin();
     }//GEN-LAST:event_mnLoginActionPerformed
 
     private void mnInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnInvActionPerformed
@@ -145,6 +146,14 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         km.tampilMasukInv();
     }//GEN-LAST:event_masukInvActionPerformed
+
+    private void mnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnLogoutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        LoginFrame2 lf = new LoginFrame2();
+        lf.setVisible(true);
+        lf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_mnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,10 +183,8 @@ public class MainFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MainFrame().setVisible(true);
         });
     }
 

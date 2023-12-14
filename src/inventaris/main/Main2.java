@@ -5,16 +5,16 @@
  */
 package inventaris.main;
 
-import inventaris.view.MainFrame;
+import inventaris.view.LoginFrame2;
 
 /**
  *
  * @author admin
  */
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
-        MainFrame mf = new MainFrame();
-        mf.setVisible(true);
-        mf.setLocationRelativeTo(null);
+        LoginFrame2 lf = new LoginFrame2();
+        lf.setVisible(true);
+        lf.setLocationRelativeTo(null);
     }
 }
