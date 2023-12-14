@@ -5,9 +5,9 @@
  */
 package inventaris.kontrol;
 
-import inventaris.view.LoginFrame;
+import inventaris.view.InventarisFrame;
 import inventaris.view.MainFrame;
-import javax.swing.JFrame;
+import inventaris.view.MasukanInv;
 
 /**
  *
@@ -20,8 +20,15 @@ public class KontrolMain {
         this.mf = fr;
     }
     
-    public void tampilLogin () {
-        LoginFrame lf = new LoginFrame();
-        mf.getDesk().add(lf);
+    public void tampilInv () {
+        InventarisFrame f = new InventarisFrame();
+        f.setVisible(true);
+        mf.getDesk().add(f);
+    }
+    
+    public void tampilMasukInv () {
+        MasukanInv f = new MasukanInv();
+        f.setVisible(true);
+        mf.getDesk().add(f);
     }
 }

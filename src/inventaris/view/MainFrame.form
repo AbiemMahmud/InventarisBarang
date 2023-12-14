@@ -12,6 +12,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mnLogin">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Login"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnLoginActionPerformed"/>
@@ -21,6 +22,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnLogoutActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
             </MenuItem>
@@ -41,6 +45,24 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Menu"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnInv">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tabel Inventaris"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnInvActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="masukInv">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Masukan Barang"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="masukInvActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
@@ -79,6 +101,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="desk">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">

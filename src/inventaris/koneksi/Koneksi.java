@@ -33,9 +33,4 @@ public class Koneksi {
         
         return con;
     }
-    
-//    Fungsi main hanya untuk cek.
-    public static void main(String[] args) {
-        Connection cn = buatKoneksi();
-    }
 }

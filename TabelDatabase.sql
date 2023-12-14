@@ -1,3 +1,5 @@
+CREATE DATABASE java;
+
 CREATE TABLE user
 (
   id_user VARCHAR(32) NOT NULL,

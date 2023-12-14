@@ -7,12 +7,9 @@ package inventaris.view;
 
 import inventaris.kontrol.KontrolMain;
 import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 
 /**
@@ -27,7 +24,6 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         this.km = new KontrolMain(this);
         initComponents();
-        km.tampilLogin();
     }
 
     /**
@@ -47,8 +43,12 @@ public class MainFrame extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        mnInv = new javax.swing.JMenuItem();
+        masukInv = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        desk.setBackground(new java.awt.Color(204, 255, 255));
 
         javax.swing.GroupLayout deskLayout = new javax.swing.GroupLayout(desk);
         desk.setLayout(deskLayout);
@@ -64,6 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         mnLogin.setText("Login");
+        mnLogin.setEnabled(false);
         mnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnLoginActionPerformed(evt);
@@ -72,6 +73,11 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu1.add(mnLogin);
 
         mnLogout.setText("Logout");
+        mnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnLogoutActionPerformed(evt);
+            }
+        });
         jMenu1.add(mnLogout);
         jMenu1.add(jSeparator1);
 
@@ -87,6 +93,23 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Menu");
+
+        mnInv.setText("Tabel Inventaris");
+        mnInv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnInvActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mnInv);
+
+        masukInv.setText("Masukan Barang");
+        masukInv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masukInvActionPerformed(evt);
+            }
+        });
+        jMenu2.add(masukInv);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -112,8 +135,25 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void mnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnLoginActionPerformed
         // TODO add your handling code here:
-        km.tampilLogin();
     }//GEN-LAST:event_mnLoginActionPerformed
+
+    private void mnInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnInvActionPerformed
+        // Menampilkan frame inventaris
+        km.tampilInv();
+    }//GEN-LAST:event_mnInvActionPerformed
+
+    private void masukInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukInvActionPerformed
+        // TODO add your handling code here:
+        km.tampilMasukInv();
+    }//GEN-LAST:event_masukInvActionPerformed
+
+    private void mnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnLogoutActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        LoginFrame2 lf = new LoginFrame2();
+        lf.setVisible(true);
+        lf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_mnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,10 +183,8 @@ public class MainFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MainFrame().setVisible(true);
         });
     }
 
@@ -189,6 +227,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem masukInv;
+    private javax.swing.JMenuItem mnInv;
     private javax.swing.JMenuItem mnLogin;
     private javax.swing.JMenuItem mnLogout;
     // End of variables declaration//GEN-END:variables
